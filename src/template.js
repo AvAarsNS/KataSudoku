@@ -1,5 +1,7 @@
-function templateFunction(x) {
-  return x / 2;
+function doesRowContainAllNumbers1To9() {
+  return true;
 }
 
-module.exports = templateFunction;
+module.exports = {
+  doesRowContainAllNumbers1To9,
+};
