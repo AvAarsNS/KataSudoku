@@ -1,5 +1,5 @@
 function doesRowContainAllNumbers1To9() {
-  return true; // Remove
+  return true;
 }
 
 module.exports = {
