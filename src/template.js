@@ -8,6 +8,10 @@ function doesRowContainAllNumbers1To9(row) {
   return true;
 }
 
+function doesRowContain9Numbers(row){
+  return row.length == 9
+}
+
 module.exports = {
-  doesRowContainAllNumbers1To9,
+  doesRowContainAllNumbers1To9, doesRowContain9Numbers
 };
