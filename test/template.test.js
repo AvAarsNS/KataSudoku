@@ -7,5 +7,10 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
         true
       );
     });
+    it("[5,3,4,6,3,8,9,1,2] contains all numbers", () => {
+      expect(doesRowContainAllNumbers1To9([5, 3, 4, 6, 3, 8, 9, 1, 3])).toEqual(
+        false
+      );
+    });
   });
 });

@@ -1,1 +1,2 @@
 - Guards are not implemented yet, to focus on business logic
+- Refactor the code to avoid for loops
