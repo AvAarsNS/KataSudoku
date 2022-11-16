@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668078012236" clover="3.2.0">
-  <project timestamp="1668078012237" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7" elements="17" coveredelements="17" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+<coverage generated="1668596435007" clover="3.2.0">
+  <project timestamp="1668596435007" name="All files">
+    <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="9" elements="22" coveredelements="20" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
     <file name="template.js" path="C:\Users\Arthur.vanAarsse_nsp\Documents\Katas\Sudoku\src\template.js">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="9"/>
       <line num="2" count="15" type="stmt"/>
       <line num="3" count="114" type="stmt"/>
       <line num="7" count="39" type="stmt"/>
-      <line num="11" count="4" type="stmt"/>
-      <line num="12" count="32" type="stmt"/>
-      <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="12" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="16" count="4" type="stmt"/>
+      <line num="17" count="32" type="stmt"/>
+      <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="12" type="stmt"/>
+      <line num="27" count="18" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
