@@ -99,3 +99,41 @@
 [2,8,7,4,1,9,6,3,5],
 [3,4,5,2,8,6,1,7,9]
 ] -> no
+
+## 🍅 Checking columns
+
+# Does a column contain 9 numbers?
+
+test 1:
+[1,]
+[2,]
+[3,]
+= false
+
+test 2:
+[1,]
+[2,]
+[3,]
+[4,]
+[5,]
+[6,]
+[7,]
+[8,]
+[9,]
+= true
+
+test 3
+[1,]
+[2,]
+[3,]
+[4,]
+[5,]
+[6,]
+[7,]
+[8,]
+[9,]
+[10,]
+= false
+
+
+# Does a column contain numbers 1-9?
