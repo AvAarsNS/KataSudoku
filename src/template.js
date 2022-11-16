@@ -23,10 +23,15 @@ function doesEveryRowContainAllNumbers1To9(grid) {
   return grid.every((row) => doesRowContainAllNumbers1To9(row));
 }
 
+function extractColumn(grid, columnIndex) {
+  return grid.map((row) => row[columnIndex]);
+}
+
 module.exports = {
   doesRowContainAllNumbers1To9,
   doesListContain9Entries,
   doesColumnContain9Numbers,
   isGrid9x9,
   doesEveryRowContainAllNumbers1To9,
+  extractColumn,
 };
