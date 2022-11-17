@@ -130,4 +130,5 @@ Check 1st column
   [3, 4, 5, 2, 8, 6, 1, 7, 9],
 ] => [3, 7, 9, 5, 2, 1, 6, 8, 4]
 
-# Does a column contain numbers 1-9?
+# Do all columns contain numbers 1-9?
+# Extract a grid of 3x3 out of the large grid

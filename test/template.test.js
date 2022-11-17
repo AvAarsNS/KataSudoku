@@ -1,27 +1,27 @@
 const {
-  doesRowContainAllNumbers1To9,
+  doesListContainAllNumbers1To9,
   doesListContain9Entries,
-  doesColumnContain9Numbers,
   isGrid9x9,
   doesEveryRowContainAllNumbers1To9,
   extractColumn,
+  doesEveryColumnContainAllNumbers1To9,
 } = require("../src/template");
 
 describe("This is a test suite for the sudoku checker, which checks if your soduku solution is correct.", () => {
   describe("We want to check if a row contains all numbers 1-9", () => {
     it("[5,3,4,6,7,8,9,1,2] contains all numbers", () => {
-      expect(doesRowContainAllNumbers1To9([5, 3, 4, 6, 7, 8, 9, 1, 2])).toEqual(
+      expect(doesListContainAllNumbers1To9([5, 3, 4, 6, 7, 8, 9, 1, 2])).toEqual(
         true
       );
     });
     it("[5,3,4,6,3,8,9,1,2] does not contain a 2", () => {
-      expect(doesRowContainAllNumbers1To9([5, 3, 4, 6, 3, 8, 9, 1, 3])).toEqual(
+      expect(doesListContainAllNumbers1To9([5, 3, 4, 6, 3, 8, 9, 1, 3])).toEqual(
         false
       );
     });
     it("[5,3,4,6,'A',8,9,1,2] does not contain a 2", () => {
       expect(
-        doesRowContainAllNumbers1To9([5, 3, 4, 6, "A", 8, 9, 1, 3])
+        doesListContainAllNumbers1To9([5, 3, 4, 6, "A", 8, 9, 1, 3])
       ).toEqual(false);
     });
   });
@@ -171,4 +171,50 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
       expect(doesEveryRowContainAllNumbers1To9(grid)).toEqual(false);
     });
   });
+    describe('Do all columns contain numbers 1-9?', () => {
+      it("Valid sudoku", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 2, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(true);
+      });
+      it("Invalid sudoku with a duplicate number", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 5, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(false);
+      });
+    });
+    describe('Extract a grid of 3x3 out of the large 9x9 grid and make it a list', () => {
+      it("first box", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 2, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(extractBox(grid)).toEqual(true);
+      });
+    });
 });
