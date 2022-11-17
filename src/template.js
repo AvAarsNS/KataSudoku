@@ -7,6 +7,11 @@ function doesListContain9Entries(list) {
   return list.length === 9;
 }
 
+function doesColumnContain9Numbers(column){
+  return column.length === 9;
+}
+
+
 function isGrid9x9(grid) {
   const has9Rows = doesListContain9Entries(grid);
   const everyRowHas9Entries = grid.every((row) => doesListContain9Entries(row));
