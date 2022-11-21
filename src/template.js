@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 function doesListContainAllNumbers1To9(list) {
   const etalon = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return etalon.every((number) => list.includes(number));
@@ -29,11 +30,21 @@ function extractColumn(grid, columnIndex) {
 
 function doesEveryColumnContainAllNumbers1To9(grid){
   for (let columnIndex = 0; columnIndex < grid[0].length; columnIndex++) {
-    column = extractColumn(grid, columnIndex)
-    if (!doesListContainAllNumbers1To9(column)){
-      return false  
+    column = extractColumn(grid, columnIndex);
+    if (!doesListContainAllNumbers1To9(column)) {
+      return false;
     }}
     return true
+}
+
+function extractBox(grid, rowIndex, columnIndex) {
+  const box = [];
+  for(let row = rowIndex; row < rowIndex + 3; row++) {
+    for (let column = columnIndex; column < columnIndex + 3; column++) {
+      box.push(grid[row][column]);
+    }
+  }
+  return box;
 }
 
 module.exports = {
@@ -43,4 +54,5 @@ module.exports = {
   doesEveryRowContainAllNumbers1To9,
   extractColumn,
   doesEveryColumnContainAllNumbers1To9,
+  extractBox,
 };

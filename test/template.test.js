@@ -5,6 +5,7 @@ const {
   doesEveryRowContainAllNumbers1To9,
   extractColumn,
   doesEveryColumnContainAllNumbers1To9,
+  extractBox,
 } = require("../src/template");
 
 describe("This is a test suite for the sudoku checker, which checks if your soduku solution is correct.", () => {
@@ -214,7 +215,52 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
           [2, 8, 7, 4, 1, 9, 6, 3, 5],
           [3, 4, 5, 2, 8, 6, 1, 7, 9],
         ];
-        expect(extractBox(grid)).toEqual(true);
+        expect(extractBox(grid, 0, 0)).toEqual([5, 3, 4, 6, 7, 2, 1, 9, 8]);
+      });
+
+      it("second box", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 2, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(extractBox(grid, 0, 3)).toEqual([6, 7, 8, 1, 9, 5, 3, 4, 2]);
+      });
+
+      it("fourth box", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 2, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(extractBox(grid, 3, 0)).toEqual([8, 5, 9, 4, 2, 6, 7, 1, 3]);
+      });
+
+      it("fourth box", () => {
+        const grid = [
+          [5, 3, 4, 6, 7, 8, 9, 1, 2],
+          [6, 7, 2, 1, 9, 5, 3, 4, 8],
+          [1, 9, 8, 3, 4, 2, 5, 6, 7],
+          [8, 5, 9, 7, 6, 1, 4, 2, 3],
+          [4, 2, 6, 8, 5, 3, 7, 9, 1],
+          [7, 1, 3, 9, 2, 4, 8, 5, 6],
+          [9, 6, 1, 5, 3, 7, 2, 8, 4],
+          [2, 8, 7, 4, 1, 9, 6, 3, 5],
+          [3, 4, 5, 2, 8, 6, 1, 7, 9],
+        ];
+        expect(extractBox(grid, 6, 6)).toEqual([2, 8, 4, 6, 3, 5, 1, 7, 9]);
       });
     });
 });
