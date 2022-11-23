@@ -26,8 +26,8 @@
     "test": "jest --verbose --coverage",
     "watch": "jest --watchAll --color --coverage --verbose",
     "_lint": "eslint --config ./.eslintrc.json --ext js --ext jsx --ext tsx --ext ts",
-    "lint": "npm run _lint -- ./src/",
-    "lint:fix": "npm run _lint -- --fix ./src/",
+    "lint": "npm run _lint -- ./src/ ./test/",
+    "lint:fix": "npm run _lint -- --fix ./src/ ./test/",
     "format": "prettier './**/*.{js,jsx,ts,tsx,css,scss,md,json}' --config ./.prettierrc",
     "format:fix": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss,md,json}' --config ./.prettierrc",
     "prepare-githooks": "husky install"

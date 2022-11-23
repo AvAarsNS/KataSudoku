@@ -29,6 +29,6 @@ jobs:
     - name: 🛠️ install libs
       run: npm install
     - name: 🕵🏻 check Linter smells 
-      run: npm lint
+      run: npm run lint
     - name: 🧪 Unit tests and Coverage
       run: npm test
