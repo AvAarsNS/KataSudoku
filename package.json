@@ -23,7 +23,7 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "watch": "jest --watchAll --color --coverage --verbose",
     "_lint": "eslint --config ./.eslintrc.json --ext js --ext jsx --ext tsx --ext ts",
     "lint": "npm run _lint -- ./src/",
