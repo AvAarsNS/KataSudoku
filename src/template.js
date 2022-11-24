@@ -13,7 +13,7 @@ function doesColumnContain9Numbers(column){
 }
 
 
-function isGrid9x9(grid) {
+        function isGrid9x9(grid) {
   const has9Rows = doesListContain9Entries(grid);
   const everyRowHas9Entries = grid.every((row) => doesListContain9Entries(row));
 
@@ -21,10 +21,10 @@ function isGrid9x9(grid) {
 }
 
 function doesEveryRowContainAllNumbers1To9(grid) {
-  return grid.every((row) => doesListContainAllNumbers1To9(row));
+                  return grid.every((row) => doesListContainAllNumbers1To9(row));
 }
 
-function extractColumn(grid, columnIndex) {
+function      extractColumn(grid, columnIndex) {
   return grid.map((row) => row[columnIndex]);
 }
 
