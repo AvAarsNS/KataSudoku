@@ -28,7 +28,13 @@ jobs:
         cache: 'npm'
     - name: 🛠️ install libs
       run: npm install
+    - name: install Snyk CLI
+      run: npm install -g snyk
     - name: 🕵🏻 check Linter smells 
       run: npm run lint
     - name: 🧪 Unit tests and Coverage
       run: npm test
+    - name: run Snyk Open Source Test
+      run: snyk test
+    - name: run Snyk Code Test
+      run: snyk code test
