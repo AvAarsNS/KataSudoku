@@ -11,14 +11,14 @@ const {
 describe("This is a test suite for the sudoku checker, which checks if your soduku solution is correct.", () => {
   describe("We want to check if a row contains all numbers 1-9", () => {
     it("[5,3,4,6,7,8,9,1,2] contains all numbers", () => {
-      expect(doesListContainAllNumbers1To9([5, 3, 4, 6, 7, 8, 9, 1, 2])).toEqual(
-        true
-      );
+      expect(
+        doesListContainAllNumbers1To9([5, 3, 4, 6, 7, 8, 9, 1, 2])
+      ).toEqual(true);
     });
-    it("[5,3,4,6,3,8,9,1,2] does not contain a 2", () => {
-      expect(doesListContainAllNumbers1To9([5, 3, 4, 6, 3, 8, 9, 1, 3])).toEqual(
-        false
-      );
+    it("[5,3,4,6,3,8,9,1,3] does not contain a 2", () => {
+      expect(
+        doesListContainAllNumbers1To9([5, 3, 4, 6, 3, 8, 9, 1, 3])
+      ).toEqual(false);
     });
     it("[5,3,4,6,'A',8,9,1,2] does not contain a 2", () => {
       expect(
@@ -42,7 +42,7 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
     });
   });
 
-  /*describe('We would like to check if a column contains 9 numbers', () => {
+  /* describe('We would like to check if a column contains 9 numbers', () => {
     it('Column does not contain 9 numbers', () => {
       const column = [
         [1],
@@ -51,9 +51,9 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
       ]
       expect(doesColumnContain9Numbers(column)).toEqual(false);
     });    
-  });*/
-  describe('We would like to extract a column out of the grid', () => {
-    it('Take the first column out of the grid', () => {
+  }); */
+  describe("We would like to extract a column out of the grid", () => {
+    it("Take the first column out of the grid", () => {
       const grid = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -68,7 +68,7 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
       expect(extractColumn(grid, 0)).toEqual([5, 6, 1, 8, 4, 7, 9, 2, 3]);
     });
 
-    it('Take the second column out of the grid', () => {
+    it("Take the second column out of the grid", () => {
       const grid = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -172,95 +172,95 @@ describe("This is a test suite for the sudoku checker, which checks if your sodu
       expect(doesEveryRowContainAllNumbers1To9(grid)).toEqual(false);
     });
   });
-    describe('Do all columns contain numbers 1-9?', () => {
-      it("Valid sudoku", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 2, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(true);
-      });
-      it("Invalid sudoku with a duplicate number", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 5, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(false);
-      });
+  describe("Do all columns contain numbers 1-9?", () => {
+    it("Valid sudoku", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 2, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(true);
     });
-    describe('Extract a grid of 3x3 out of the large 9x9 grid and make it a list', () => {
-      it("first box", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 2, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(extractBox(grid, 0, 0)).toEqual([5, 3, 4, 6, 7, 2, 1, 9, 8]);
-      });
-
-      it("second box", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 2, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(extractBox(grid, 0, 3)).toEqual([6, 7, 8, 1, 9, 5, 3, 4, 2]);
-      });
-
-      it("fourth box", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 2, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(extractBox(grid, 3, 0)).toEqual([8, 5, 9, 4, 2, 6, 7, 1, 3]);
-      });
-
-      it("fourth box", () => {
-        const grid = [
-          [5, 3, 4, 6, 7, 8, 9, 1, 2],
-          [6, 7, 2, 1, 9, 5, 3, 4, 8],
-          [1, 9, 8, 3, 4, 2, 5, 6, 7],
-          [8, 5, 9, 7, 6, 1, 4, 2, 3],
-          [4, 2, 6, 8, 5, 3, 7, 9, 1],
-          [7, 1, 3, 9, 2, 4, 8, 5, 6],
-          [9, 6, 1, 5, 3, 7, 2, 8, 4],
-          [2, 8, 7, 4, 1, 9, 6, 3, 5],
-          [3, 4, 5, 2, 8, 6, 1, 7, 9],
-        ];
-        expect(extractBox(grid, 6, 6)).toEqual([2, 8, 4, 6, 3, 5, 1, 7, 9]);
-      });
+    it("Invalid sudoku with a duplicate number", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 5, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(doesEveryColumnContainAllNumbers1To9(grid)).toEqual(false);
     });
+  });
+  describe("Extract a grid of 3x3 out of the large 9x9 grid and make it a list", () => {
+    it("first box", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 2, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(extractBox(grid, 0, 0)).toEqual([5, 3, 4, 6, 7, 2, 1, 9, 8]);
+    });
+
+    it("second box", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 2, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(extractBox(grid, 0, 3)).toEqual([6, 7, 8, 1, 9, 5, 3, 4, 2]);
+    });
+
+    it("fourth box", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 2, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(extractBox(grid, 3, 0)).toEqual([8, 5, 9, 4, 2, 6, 7, 1, 3]);
+    });
+
+    it("fourth box", () => {
+      const grid = [
+        [5, 3, 4, 6, 7, 8, 9, 1, 2],
+        [6, 7, 2, 1, 9, 5, 3, 4, 8],
+        [1, 9, 8, 3, 4, 2, 5, 6, 7],
+        [8, 5, 9, 7, 6, 1, 4, 2, 3],
+        [4, 2, 6, 8, 5, 3, 7, 9, 1],
+        [7, 1, 3, 9, 2, 4, 8, 5, 6],
+        [9, 6, 1, 5, 3, 7, 2, 8, 4],
+        [2, 8, 7, 4, 1, 9, 6, 3, 5],
+        [3, 4, 5, 2, 8, 6, 1, 7, 9],
+      ];
+      expect(extractBox(grid, 6, 6)).toEqual([2, 8, 4, 6, 3, 5, 1, 7, 9]);
+    });
+  });
 });
